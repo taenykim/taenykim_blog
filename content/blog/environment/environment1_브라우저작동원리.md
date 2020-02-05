@@ -1,5 +1,5 @@
 ---
-title: 브라우저 작동원리
+title: 브라우저 작동원리(작성중)
 date: 2020-02-05 14:02:41
 category: environment
 draft: false
