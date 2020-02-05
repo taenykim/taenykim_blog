@@ -1,12 +1,12 @@
 module.exports = {
-  title: `< MyBlog  />`,
+  title: `< Taenylog  />`,
   description: `웹 프론트엔드 공부 블로그`,
   author: `taenyKim`,
   introduction: `웹 프론트엔드 공부 블로그`,
-  siteUrl: `https://taenykim.netlify.com`, // Your blog site url
+  siteUrl: `https://taeny.dev`, // Your blog site url
   social: {
     twitter: ``, // Your Twitter account
-    github: ``, // Your GitHub account
+    github: `https://github.com/taenykim`, // Your GitHub account
     medium: ``, // Your Medium account
     facebook: ``, // Your Facebook account
   },
