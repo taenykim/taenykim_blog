@@ -11,13 +11,15 @@ from-heading: 1
 to-heading: 5
 ```
 
-# 1. 넓은 범위에서의 작동원리
+# 0. 인트로
 
-자바스크립트는 한줄한줄 코드를 읽어내려가는 `인터프리팅` 방식으로 언어를 해독한다.
+자바스크립트는 V8엔진 내부에서 JIT컴파일러로 컴파일 된 후 `인터프리팅` 방식으로 언어를 해독된다.
 
 [브라우저작동원리>자바스크립트엔진](http://localhost:8000/environment/environment1_%EC%9B%B9%EB%B8%8C%EB%9D%BC%EC%9A%B0%EC%A0%80%EC%9E%91%EB%8F%99%EC%9B%90%EB%A6%AC/#2-2-%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8%EC%97%94%EC%A7%84)
 
-## 1.1 싱글스레드, 비동기 방식
+그럼 자바스크립트 코드들을 실행하는 전체적인 매커니즘은 어떤 방식일까?
+
+# 1. 싱글스레드, 비동기 방식
 
 자바스크립트는 자바스크립트엔진을 통해 `싱글스레드`와 `비동기 방식`으로 해독된다.
 
@@ -39,7 +41,7 @@ blocking은 요청을 보내서 **시간이 걸리는 작업들**에서 발생�
 
 그럼 자바스크립트는 blocking을 어떻게 막힘이 없는 비동기 방식으로 처리할까?
 
-## 1.2 자바스크립트 이벤트루프
+# 2. 자바스크립트 이벤트루프
 
 ![](./images/js.png)
 
@@ -65,8 +67,106 @@ blocking은 요청을 보내서 **시간이 걸리는 작업들**에서 발생�
 
 > web API 와 콜백 큐, 이벤트루프 덕분에 자바스크립트는 비동기 방식으로 작동할 수 있다.
 
-# 2. 좁은 범위에서의 작동원리
+# 3. 실행 컨텍스트
 
-## 2-1. 실행 컨텍스트
+`실행 컨텍스트` : 자바스크립트가 해석되고 실행되는 환경
 
-..(작성중)
+> **execution context** is an abstract concept of an **environment where the Javascript code is evaluated and executed.** Whenever any code is run in JavaScript, it's run inside an execution context.
+
+처음 코드를 읽을 때, 모든 실행 컨텍스트를 포괄하는 `전역 컨텍스트` 가 생성되며, 전역 컨텍스트 내에서 함수가 호출되면 `함수 컨텍스트`가 생성된다.
+
+**자바스크립트 엔진은 이러한 컨텍스트를 `객체` 형태로 관리한다.**
+
+이러한 컨텍스트 (환경) 내에서는 `변수` , `scope chain` , `this` 가 담긴다.
+
+## 3-1. 변수
+
+현재 함수 내부에 있는 변수들이 저장된다.
+
+```javascript
+let num = 0
+
+function hello() {
+  return console.log('hello')
+}
+// 전역 컨텍스트에서의 변수 : num, hello
+```
+
+### hoisting
+
+`호이스팅` : 자바스크립트의 컴파일 단계에서 미리 변수들을 실행 컨텍스트에 저장하는 매커니즘
+
+```javascript
+console.log(a)
+func()
+function func() {
+  console.log('함수실행')
+}
+var a = '변수'
+// undefined (전역 컨텍스트에 변수 a는 저장되어 있지만 초기화는 되지 않은 상태 )
+// 함수실행 (전역 컨텍스트에 저장된 func 함수변수가 정상적으로 실행됨)
+```
+
+V8 자바스크립트 엔진은 자바스크립트 코드를 한번 컴파일 한 후, 인터프리팅 방식으로 코드를 읽는다.
+
+V8 자바스크립트 엔진은 컴파일 단계에서 미리 변수들을 스캔해서 실행 컨텍스트에 변수들을 저장한다. 그래서 `선언`부의 코드들이 코드의 최상단에 올려지는 느낌을 받는다.
+
+## 3-2. scope chain
+
+전역 객체(전역 컨텍스트의 물리적 형태)를 포함한 중첩된 함수 객체(함수 컨텍스트의 물리적 형태)를 리스트의 형태로 저장한다.
+
+> 해당 컨텍스트에 변수정보가 없을 시, 이 scope chain을 통해 scope를 참조한다.
+
+scope는 이벤트루프의 call stack 처럼 함수가 호출될 때 쌓이는 개념이 아니라, 함수가 선언된 환경에서 정의되는 개념이다!
+
+### lexical scoping
+
+`lexical scoping` (정적 스코프) : scope는 함수가 선언될 때 정의된다!
+
+###### :question: (엔진이 scope를 호이스팅처럼 컴파일 시 결정하는 건가?)
+
+```javascript
+function foo() {
+  console.log(x)
+}
+
+function bar() {
+  var x = 15
+  foo()
+}
+
+var x = 10
+foo() // 10
+bar() // 10
+```
+
+여기서 foo의 scope chain은 [전역객체, foo] 이고,
+
+foo가 전역에서 실행되든, bar안에서 실행되든 전역변수 x = 10을 참조한다.
+
+```javascript
+function day() {
+  function morning() {
+    function breakfast() {
+      console.log('아침밥 드세요~')
+    }
+  }
+}
+// breakfast 함수 컨텍스트에서의 scope chain [전역객체, day, morning, breakfast]
+```
+
+## 3-3. this
+
+this는 현재 실행 컨텍스트에서의 호출자를 의미한다.
+
+```javascript
+const obj = {
+  value: 'obj의 값',
+  inner: function() {
+    console.log(this.value) // 'obj의 값' 출력
+  },
+}
+obj.inner()
+```
+
+> 브라우저 환경에서의 this 는 전역객체인 window
