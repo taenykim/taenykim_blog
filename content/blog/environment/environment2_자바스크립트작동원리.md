@@ -169,4 +169,6 @@ const obj = {
 obj.inner()
 ```
 
-> 브라우저 환경에서의 this 는 전역객체인 window
+브라우저 환경에서는 호출자 this에 `window 전역객체`가 담겨서 javascript로 브라우저 내장 기능들(`web API`)에 접근하고 사용할 수 있게 된다.
+
+> web API : windlow.setTimeout() 같은 window내부 메소드들이나 DOM 접근 메소드 등..
