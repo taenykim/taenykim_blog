@@ -77,7 +77,7 @@ document.body.appendChild(newtext)
 
 > getElement 메소드는 문자열형태의 parameter 값을 넣어서 element를 찾는 반면, querySelector 메소드는 parameter에 직접 선택자(#id .class div)를 넣어 비교적 자유롭게 사용가능하다.
 
-## 4. DOM element 속성
+# 4. DOM element 속성
 
 ```javascript
 var elem = {
@@ -153,7 +153,7 @@ var elem = {
 
 **elem.classList.remove()** : 해당 element 에 클래스 제거
 
-## 5-1. READ 메소드
+## 5-2. READ 메소드
 
 **elem.contains()** : 해당 element가 특정 element를 `자손`으로 가지고 있는지 판단. (boolean 값 반환)
 
@@ -176,7 +176,7 @@ var DOMRect = {
 
 ![](./images/getRec.png)
 
-## 5-2. UPDATE 메소드
+## 5-3. UPDATE 메소드
 
 **elem.append()** : 해당 element를 특정 부모 element의 마지막 자식으로 넣음
 
@@ -199,17 +199,17 @@ var DOMRect = {
 
 > 얘도 텍스트노드 자식추가가 가능하다.
 
-## 5-3. DELETE 메소드
+## 5-4. DELETE 메소드
 
 **elem.remove()** : 해당 객체를 DOM 트리에서 제거.
 
 **elem.removeAttribute()** : 해당 객체의 속성 제거. (parameter 에 속성을 넣어준다.)
 
-## 5-4. 기타 메소드
+## 5-5. 기타 메소드
 
 **elem.scrollIntoView()** : 컨테이너에서 해당 element의 위치로 스크롤한다.
 
-## 5-4. EVENT 메소드
+## 5-6. EVENT 메소드
 
 **elem.addEventListener()** : 이벤트리스너 등록
 
@@ -217,9 +217,9 @@ var DOMRect = {
 
 **elem.dispatchEvent()** : 해당 elem 에 event 디스패치 (parameter 로 이벤트 객체가 들어감)
 
-# 4. 이벤트 핸들러
+# 6. 이벤트 핸들러
 
-## 3-1. 이벤트 핸들러란?
+## 6-1. 이벤트 핸들러란?
 
 DOM 객체는 속성값으로 이벤트핸들러를 가질 수 있다.
 
@@ -227,7 +227,7 @@ DOM 객체는 속성값으로 이벤트핸들러를 가질 수 있다.
 
 이 때 반응은 함수를 실행시키며, javascript가 해준다.
 
-## 3-2. 이벤트란?
+## 6-2. 이벤트란?
 
 1. 이벤트는 객체이며, 스스로 속성을 갖는다.
 
@@ -235,7 +235,7 @@ DOM 객체는 속성값으로 이벤트핸들러를 가질 수 있다.
 
 3. 이 때, 함수에 이벤트객체를 같이 보내준다. (보통, e, event로 명칭함)
 
-## 3-3. 이벤트 버블링
+## 6-3. 이벤트 버블링
 
 중첩된 DOM 요소들이 이벤트를 처리하는 방식
 
@@ -251,7 +251,7 @@ DOM 객체는 속성값으로 이벤트핸들러를 가질 수 있다.
 
 이러한 메커니즘을 이벤트 버블링이라고 한다. (반대 방식은 이벤트 캡쳐링이라고 함)
 
-## 3-4. 이벤트 속성
+## 6-4. 이벤트 속성
 
 ```javascript
 var e = {
@@ -265,7 +265,7 @@ var e = {
 
 ![](./images/etarget.png)
 
-## 3-3. 이벤트 타입
+## 6-5. 이벤트 타입
 
 [MDN문서](https://developer.mozilla.org/en-US/docs/Web/Events)
 
@@ -315,7 +315,7 @@ var e = {
 
 > onclick, onchange, onsubmit ...
 
-## 3-4. 이벤트 핸들링 방식
+## 6-6. 이벤트 핸들링 방식
 
 **1. html only**
 
