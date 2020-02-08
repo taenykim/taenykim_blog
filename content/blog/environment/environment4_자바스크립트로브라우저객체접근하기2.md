@@ -26,8 +26,10 @@ var document = {
     head : <head>, // html 의 head 부분 반환
     body : <body>, // html 의 body 부분 반환
     charaterSet : "UTF-8", // html 의 캐릭터셋 반환
-    documentElement : <body> // html을 반환
+
     // document.html 이 아니다!!
+    documentElement : <body> // html을 반환
+
     forms : HTMLCollection[], // 현재문서에서 모든 form 태그들 반환
     links : HTMLCollection[], // 현재문서에서 모든 하이퍼링크 태그들 반환
     images : HTMLCollection[], // 현재문서에서 모든 이미지들 반환
@@ -63,7 +65,7 @@ document.body.appendChild(newtext)
 
 **document.getElementById()** : parameter에 해당되는 id를 가진 DOM element를 읽어온다.(단수)
 
-**document.getElementsByClassName()** : parameter에 해당되는 class 이름을 가진 DOM element들을 **HTMLCollection** 형태로 읽어온다.(복수)
+**document.getElementsByClassName()** : parameter에 해당되는 class 이름을 가진 DOM element들을 HTMLCollection 형태로 읽어온다.(복수)
 
 **document.getElementByTagName()** : parameter에 해당되는 태그들을 HTMLCollection 형태로 읽어온다.(복수)
 
@@ -71,7 +73,7 @@ document.body.appendChild(newtext)
 
 **document.querySelctor()** : parameter에 해당되는 선택자를 가진 DOM element를 읽어온다.(단수)
 
-**document.querySelectorAll()** : parameter에 해당되는 선택자를 가진 DOM element들을 **노드리스트** 형태로 읽어온다.(복수)
+**document.querySelectorAll()** : parameter에 해당되는 선택자를 가진 DOM element들을 노드리스트 형태로 읽어온다.(복수)
 
 `getElement vs querySeletor`
 
@@ -110,13 +112,17 @@ var elem = {
 
     // :star: innerText vs innerContent
     innerText : "", // element의 렌더링된 텍스트부분 반환
-    innerContent : "", // element Node의 텍스트부분 반환
+    innerContent : "", // element의 텍스트부분 반환
 }
 ```
 
 `children vs childNodes`
 
 > children 속성은 element 인터페이스의 속성이고 childNodes는 node 인터페이스의 속성이다. **차이점**은 텍스트노드가 node에는 포함되지만 element에는 포함되지 않는다는 것이다. 일반적으로 생각하는 태그들에 해당하는 DOM element를 불러오고 싶으면 children 속성을 참조하는 게 맞다.
+
+`NodeList vs NamedNodeMap`
+
+> NodeList[] 와 NamedNodeMap{} 의 **차이점** : 둘다 collection 형태로 데이터'들'을 가져오지만 NodeList는 순서가 있는 반면 NamedNodeMap은 순서가 없다.
 
 `Node vs Element vs EventTarget`
 
@@ -127,10 +133,6 @@ var elem = {
 > 예) html 의 부모노드는 document 이지만, html 의 부모 엘리먼트는 null.
 
 ###### :question: 그럼 텍스트노드에도 이벤트리스너를 등록할 수 있는건가? (해보기)
-
-`NodeList vs NamedNodeMap`
-
-> NodeList[] 와 NamedNodeMap{} 의 **차이점** : 둘다 collection 형태로 데이터'들'을 가져오지만 NodeList는 순서가 있는 반면 NamedNodeMap은 순서가 없다.
 
 `innerText vs innerContent 예제`
 
@@ -147,7 +149,7 @@ var elem = {
 
 # 5. DOM element 메소드
 
-## 5-1. CREATE 메소드
+## 5-1. classlist 속성 속 메소드
 
 **elem.classList.add()** : 해당 element 에 클래스 추가
 
