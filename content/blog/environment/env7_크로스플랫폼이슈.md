@@ -1,6 +1,6 @@
 ---
 title: 크로스 플랫폼 이슈(작성중)
-date: 2020-02-08 19:02:56
+date: 2020-02-09 16:02:23
 category: environment
 draft: false
 ---
