@@ -169,6 +169,8 @@ const obj = {
 obj.inner()
 ```
 
-브라우저 환경에서는 호출자 this에 `window 전역객체`가 담겨서 javascript로 브라우저 내장 기능들(`web API`)에 접근하고 사용할 수 있게 된다.
+브라우저 환경에서는 호출자 this에 `window 전역객체`가 담긴다.
+
+:bulb: javascript로 브라우저 내장 기능들(`web API`)에 접근하고 사용할 수 있는 이유는 this(호출자)가 window여서가 아니라 scope chain에 전역객체인 window가 들어있기 때문이다!
 
 > web API : windlow.setTimeout() 같은 window내부 메소드들이나 DOM 접근 메소드 등..
