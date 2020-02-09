@@ -1,5 +1,5 @@
 ---
-title: 자바스크립트 nodeJS에서 실행하기(작성중)
+title: 자바스크립트 nodeJS에서 실행하기 -1
 date: 2020-02-08 15:02:13
 category: environment
 draft: false
@@ -41,11 +41,17 @@ to-heading: 5
 
 그리고 html에서는 `<script></script>` 태그로 자바스크립트파일을 불러와 실행 시켰다면 nodeJS 에서는 `node 파일이름.js` 처럼 명령어를 통해 자바스크립트를 실행한다.
 
+## 1-2. nodeJS 작동원리
+
+nodeJS는 실행컨텍스트 내에서 대표적으로 싱글스레드, 비동기 방식으로 자바스크립트를 실행한다.
+
+[자바스크립트작동원리](http://localhost:8000/environment/environment2_%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8%EC%9E%91%EB%8F%99%EC%9B%90%EB%A6%AC/)
+
 # 2. nodeJS 가 하는일
 
 그럼 구체적으로 nodeJS로 무엇을 할 수 있을까?
 
-## 2-1. 웹 서버 구동
+# 3. 웹 서버 구동
 
 웹의 작동원리는 브라우저에서 다른 컴퓨터(서버)의 프로세스에 포트를 통해 접근해서 필요한 소스를 받아오는 식이다.
 
@@ -53,7 +59,7 @@ to-heading: 5
 
 만약 다른 사용자가 웹을 통하여 내 프로그램에 접근하고 싶을 때, 내 프로그램은 컴퓨터 어디선가 프로세스 형태로 돌아가고 있어야 하고 nodeJS는 내 컴퓨터의 리소스를 사용해 프로그램을 돌려준다. (즉 nodeJS 내장 자바스크립트 엔진을 이용해 자바스크립트를 실행시켜준다.)
 
-## 2-2. 모듈 시스템
+# 4. 모듈 시스템
 
 `모듈` : 특정한 기능을 하는 함수나 변수들의 집합
 
@@ -61,32 +67,92 @@ to-heading: 5
 
 > 모듈은 자체로도 하나의 프로그램이면서 전체 프로그램의 부품으로 사용된다.
 
-### commonJS, AMD, ES6(작성중)
+## 4-1. Dependency (의존성)
 
-직접 모듈을 만들어서 메인 프로그램에 넣어줄 수 도 있고,
+`의존성` : 모듈 간의 연결 혹은 관계
 
-```javascript
-// modules.js
-const name = 'taeny'
-module.exports = { name }
+> 프로그램이 커짐에 따라, 사용하는 모듈의 수가 많아지면 모듈들에 있는 변수, 함수 객체들이 충돌할 가능성이 높아지기 때문에 모듈들이 충돌하지 않게 의존성을 부여해 주어야한다.
 
-// main.js
-const { name } = require('./modules.js')
-console.log(name)
+의존성 부여는 자바스크립트 실행 컨텍스트의 `scope chain`과 관련이 있다.
+
+[실행컨텍스트>scopechain](https://taeny.dev/environment/env2_%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8%EC%9E%91%EB%8F%99%EC%9B%90%EB%A6%AC/#3-2-scope-chain)
+
+자바스크립트는 실행 컨텍스트 내에서 현재 스코프의 변수와 함수를 우선적으로 스캔하고 없을 시, scope chain 을 참조해 다음 스코프로 넘어간다.
+
+근데 scope chain을 참조하는 과정에서 **다른 기능을 하지만 똑같은 변수명**의 변수나 함수를 만나버리면 프로그램이 치명적인 에러를 발생할 가능성을 낳는다.
+
+그렇게 자바스크립트 파일 내에서 이것은 모듈이니까 나 외에는 참조하지마! 하고 `Dependency Injection`을 해줘야한다.
+
+## 4-2. html에서 모듈사용
+
+html script 태그 내에서 type 속성에 module 속성값을 넣어줌으로써 직접 모듈임을 정의 해줄 수 있다.
+
+```html
+<script src="app.js"></script>
+<script type="module" src="module1.js"></script>
 ```
 
-외부(npm) 에서 잘 만들어진 모듈을 가져와 쓸 수 도 있다.
+## 4-3. CommonJS란?
 
-> 외부
+script태그에 넣어주는 방식은 브라우저에 국한되므로 많은 제약이 있다. 그렇게 브라우저뿐만 아니라 내 컴퓨터에 있는 javascript 파일을 모듈로서 정의하고 사용하기 위해(`서버사이드 자바스크립트`) CommonJS 라는 단체가 나오게 된다.
 
-## 2-3 npm(작성중)
+현재 CommonJS도 ECMAScript 와 마찬가지로 자바스크립트의 모듈화를 위한 하나의 명세(문법)을 정의했으며 nodeJS에서 이를 받아들여 모듈화를 위한 언어를 사용할 수 있게 되었다.
 
-node_modules
+## 4-4. CommonJS 문법
 
-![](./images/nodemodules.png)
+### 모듈화
 
-# 3. nodeJS 작동원리
+```javascript
+// 내용물
+const variable1 = {}
+function functionA() {}
+function functionB() {}
 
-nodeJS는 실행컨텍스트 내에서 대표적으로 싱글스레드, 비동기 방식으로 자바스크립트를 실행한다.
+// 전체 모듈화
+module.exports = moduleName1
+```
 
-[자바스크립트작동원리](http://localhost:8000/environment/environment2_%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8%EC%9E%91%EB%8F%99%EC%9B%90%EB%A6%AC/)
+### 모듈 사용
+
+```javascript
+const module1 = require('./moduleName1')
+```
+
+## 4-5. 자바스크립트 문법(ES6)
+
+nodeJS에서는 일반적으로 CommonJS 방식을 사용하나 점차적으로 ECMAScript 모듈 방식도 도입 중이다.
+
+###### :question: 현재 node 13.2.0 에서 package.json {"type":"module"} 이나 .mjs 방식으로 사용가능한듯!
+
+### 모듈화
+
+```javascript
+// 내용물
+const variable1 = {}
+function functionA() {}
+function functionB() {}
+
+// 전체 모듈화
+export *;
+// :star: 전체 모듈화 (default export)
+export default moduleName2
+// 함수만 모듈화
+export function moduleFunc() {};
+```
+
+### 모듈 사용
+
+```javascript
+// 전체 모듈 사용
+import * from './moduleName2'
+// :star: 전체 모듈 사용 (default import)
+import module from './moduleName2'
+// 함수만 모듈 사용
+import { moduleFunc } from module from './moduleName2'
+```
+
+`export vs default export`
+
+> **export**는 모듈을 **import** 할 때, {}를 꼭 써줘야 한다. {}는 사용 모듈의 제한성 표시이며 해당 모듈명과 동일하게 써줘야 한다. 바꾸고 싶으면 {moduleFuc as myModuleFuc } 이르케 써줘야함.
+
+> **default export**는 모듈 내에 하나의 모듈화를 위해 사용되는데 모듈을 **import** 할 때, {}를 붙이지 않으며, 자신이 원하는 모듈명으로 모듈을 사용할 수 있다.
