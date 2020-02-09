@@ -163,17 +163,53 @@ package-lock.json 파일은 node_modules 에 저장된 패키지의 모듈들의
 
 # 2. nodeJS 내장 객체
 
+## 2-1. global
+
 앞선 포스트에서 브라우저에서 자바스크립트를 실행할 때, 실행컨텍스트의 scope chain에 전역객체로 `window`가 담기는 것을 알아보았다.
 
 [자바스크립트로브라우저객체접근하기1](https://taeny.dev/environment/env3_%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8%EB%A1%9C%EB%B8%8C%EB%9D%BC%EC%9A%B0%EC%A0%80%EA%B0%9D%EC%B2%B4%EC%A0%91%EA%B7%BC%ED%95%98%EA%B8%B01/)
 
-그럼 nodeJS 에서도 console.log() 를 쓸 수 있으니까 this 에 console 객체를 내장한 (window랑 비슷한,,) 애가 담겼겠구나 하고 this를 찍어보았다.
+nodeJS 에서도 console.log() 를 쓸 수 있으니 console객체를 내장한 전역객체 `global`이 존재한다.
+
+:bulb: :bulb: :bulb: window 내장 객체를 생략해서 쓸 수 있는 이유가 실행컨텍스트 this(호출자)에 담겨서 인 줄 알았는데 scope chain 최상단에 전역객체로 존재하기 때문이었다!
 
 ```javascript
+// :fire: nodeJS 환경에서 this 출력
+node > console.log(this)
+// 결과값 : global <Object>
+
+// :fire: nodeJS로 console.log(this)가 적힌 프로그램 실행
+// test.js
 console.log(this)
-// undefined
+
+node test.js
+// 결과값 : {}
+
+// :fire: nodeJS로 모듈 속성을 넣어준 프로그램 실행
+// test2.js
+module.exports.name = "taeny"
+console.log(this)
+
+node test2.js
+// 결과값 : {name: 'taeny'}
 ```
 
-읭?
+nodeJS 프로그램 내부에서 this 는 global 전역객체를 가리키고 nodeJS를 통해 실행한 javascript 프로그램의 this는 해당 모듈을 가리킨다.
 
-찾아보니 nodeJS 에서는 global 이라는 전역객체가 존재하지만 호출자는 global 전역객체가 아니라 module 그 자체라고 한다.
+# 3. global 내장기능들
+
+## 3-1. window 객체와 비슷한 부분
+
+1. console 객체
+
+[window내부객체>console](https://taeny.dev/environment/env3_%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8%EB%A1%9C%EB%B8%8C%EB%9D%BC%EC%9A%B0%EC%A0%80%EA%B0%9D%EC%B2%B4%EC%A0%91%EA%B7%BC%ED%95%98%EA%B8%B01/#2-6-console-%EA%B0%9D%EC%B2%B4)
+
+2. 타이머 함수
+
+[window내부메소드>setTimeout()](https://taeny.dev/environment/env3_%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8%EB%A1%9C%EB%B8%8C%EB%9D%BC%EC%9A%B0%EC%A0%80%EA%B0%9D%EC%B2%B4%EC%A0%91%EA%B7%BC%ED%95%98%EA%B8%B01/#3-3-settimeout-cleartimeout)
+
+## 3-2. global 고유 기능
+
+### 1. \_\_filename, \_\_dirname
+
+(작성중)
