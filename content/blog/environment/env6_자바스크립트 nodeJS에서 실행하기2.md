@@ -1,5 +1,5 @@
 ---
-title: 자바스크립트 nodeJS에서 실행하기 -2
+title: 자바스크립트 nodeJS에서 실행하기 -2 (작성중)
 date: 2020-02-08 19:02:56
 category: environment
 draft: false
@@ -76,3 +76,5 @@ package.json은 직접 만들거나 `npm init`이라는 명령어를 통해 자�
 ### dependencies
 
 ### devDependencies
+
+(작성중)
