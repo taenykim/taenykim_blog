@@ -13,7 +13,7 @@ to-heading: 6
 
 # 0. Intro
 
-추가 예정
+:hatched_chick: 추가 예정
 
 > grid
 
