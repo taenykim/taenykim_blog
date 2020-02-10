@@ -13,7 +13,13 @@ to-heading: 6
 
 # 0. Intro
 
-> 추가 예정 : grid, css 작동원리 (렌더링엔진), pseudo-element (::before, ::after)
+추가 예정
+
+> grid
+
+> css 작동원리 (렌더링엔진)
+
+> pseudo-element (::before, ::after)
 
 # 1. CSS
 
