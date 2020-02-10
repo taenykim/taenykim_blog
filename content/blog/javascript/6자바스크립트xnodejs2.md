@@ -15,7 +15,7 @@ to-heading: 5
 
 구체적으로 nodeJS로 무엇을 할 수 있을까?
 
-[자바스크립트nodeJS에서실행하기1(module)](https://taeny.dev/environment/env5_%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8%20nodeJS%EC%97%90%EC%84%9C%20%EC%8B%A4%ED%96%89%ED%95%98%EA%B8%B0/)에서 이어집니다.
+[자바스크립트 X nodeJS -1 (module)](https://taeny.dev/javascript/5%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8xnodejs1/)에서 이어집니다.
 
 # 1. npm
 
@@ -29,13 +29,13 @@ nodeJS에서는 npm이라고 `패키지`를 관리할 수 있는 프로그램이
 
 > **모듈** : 특정한 기능을 하는 함수나 변수들의 집합
 
-[자바스크립트nodeJS에서실행하기1>모듈시스템](https://taeny.dev/environment/env5_%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8%20nodeJS%EC%97%90%EC%84%9C%20%EC%8B%A4%ED%96%89%ED%95%98%EA%B8%B0/#4-%EB%AA%A8%EB%93%88-%EC%8B%9C%EC%8A%A4%ED%85%9C)
+[자바스크립트 X nodeJS -1 (module)>모듈시스템](https://taeny.dev/javascript/5%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8xnodejs1/#4-%EB%AA%A8%EB%93%88-%EC%8B%9C%EC%8A%A4%ED%85%9C)
 
 > **패키지** : 이런 모듈들을 용도에 맞게 패키징한 하나의 프로그램
 
 > **dependency** : 패키지들이 충돌하지 않게 npm은 패키지마다 의존성을 부여해준다.
 
-[모듈시스템>dependency(의존성)](https://taeny.dev/environment/env5_%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8%20nodeJS%EC%97%90%EC%84%9C%20%EC%8B%A4%ED%96%89%ED%95%98%EA%B8%B0/#4-1-dependency-%EC%9D%98%EC%A1%B4%EC%84%B1)
+[모듈시스템>dependency(의존성)](https://taeny.dev/javascript/5%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8xnodejs1/#4-1-dependency-%EC%9D%98%EC%A1%B4%EC%84%B1)
 
 ## 1-1. package.json
 
@@ -167,7 +167,7 @@ package-lock.json 파일은 node_modules 에 저장된 패키지의 모듈들의
 
 앞선 포스트에서 브라우저에서 자바스크립트를 실행할 때, 실행컨텍스트의 scope chain에 전역객체로 `window`가 담기는 것을 알아보았다.
 
-[자바스크립트로브라우저객체접근하기1](https://taeny.dev/environment/env3_%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8%EB%A1%9C%EB%B8%8C%EB%9D%BC%EC%9A%B0%EC%A0%80%EA%B0%9D%EC%B2%B4%EC%A0%91%EA%B7%BC%ED%95%98%EA%B8%B01/)
+[자바스크립트로브라우저객체접근하기1](hhttps://taeny.dev/javascript/3%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8x%EB%B8%8C%EB%9D%BC%EC%9A%B0%EC%A0%801/)
 
 nodeJS 에서도 console.log() 를 쓸 수 있으니 console객체를 내장한 전역객체 `global`이 존재한다.
 
@@ -203,11 +203,11 @@ nodeJS 프로그램 내부에서 this 는 global 전역객체를 가리키고 no
 
 1. console 객체
 
-[window내부객체>console](https://taeny.dev/environment/env3_%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8%EB%A1%9C%EB%B8%8C%EB%9D%BC%EC%9A%B0%EC%A0%80%EA%B0%9D%EC%B2%B4%EC%A0%91%EA%B7%BC%ED%95%98%EA%B8%B01/#2-6-console-%EA%B0%9D%EC%B2%B4)
+[window내부객체>console](https://taeny.dev/javascript/3%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8x%EB%B8%8C%EB%9D%BC%EC%9A%B0%EC%A0%801/#2-6-console-%EA%B0%9D%EC%B2%B4)
 
 2. 타이머 함수
 
-[window내부메소드>setTimeout()](https://taeny.dev/environment/env3_%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8%EB%A1%9C%EB%B8%8C%EB%9D%BC%EC%9A%B0%EC%A0%80%EA%B0%9D%EC%B2%B4%EC%A0%91%EA%B7%BC%ED%95%98%EA%B8%B01/#3-3-settimeout-cleartimeout)
+[window내부메소드>setTimeout()](https://taeny.dev/javascript/3%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8x%EB%B8%8C%EB%9D%BC%EC%9A%B0%EC%A0%801/#3-3-settimeout-cleartimeout)
 
 ## 3-2. global 객체 고유 기능
 
@@ -219,7 +219,7 @@ nodeJS 프로그램 내부에서 this 는 global 전역객체를 가리키고 no
 
 ## 3-4. CommonJS 문법(module 객체, exports 객체)
 
-[모듈시스템>CommonJS란?](http://localhost:8001/environment/env5_%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8%20nodeJS%EC%97%90%EC%84%9C%20%EC%8B%A4%ED%96%89%ED%95%98%EA%B8%B0/#4-3-commonjs%EB%9E%80)
+[모듈시스템>CommonJS란?](https://taeny.dev/javascript/5%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8xnodejs1/#4-3-commonjs%EB%9E%80)
 
 `module 객체 사용`
 

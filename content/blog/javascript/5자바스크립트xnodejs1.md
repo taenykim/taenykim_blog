@@ -15,11 +15,11 @@ to-heading: 5
 
 앞선 포스트에서 브라우저가 자바스크립트엔진을 통하여 자바스크립트를 실행하고 더나아가 브라우저 객체 혹은 DOM (html을 비롯한 태그요소들의 객체형태) 에 접근하는 방식에 대해 다뤘다.
 
-- [웹브라우저작동원리](https://taeny.dev/environment/environment1_%EC%9B%B9%EB%B8%8C%EB%9D%BC%EC%9A%B0%EC%A0%80%EC%9E%91%EB%8F%99%EC%9B%90%EB%A6%AC/)
+- [웹브라우저작동원리](https://taeny.dev/javascript/1%EC%9B%B9%EB%B8%8C%EB%9D%BC%EC%9A%B0%EC%A0%80%EC%9E%91%EB%8F%99%EC%9B%90%EB%A6%AC/)
 
-- [자바스크립트로브라우저객체접근하기1(window)](https://taeny.dev/environment/environment3_%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8%EB%A1%9C%EB%B8%8C%EB%9D%BC%EC%9A%B0%EC%A0%80%EA%B0%9D%EC%B2%B4%EC%A0%91%EA%B7%BC%ED%95%98%EA%B8%B01/)
+- [자바스크립트 X 브라우저 -1 (window)](https://taeny.dev/javascript/3%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8x%EB%B8%8C%EB%9D%BC%EC%9A%B0%EC%A0%801/)
 
-- [자바스크립트로브라우저객체접근하기2(document)](https://taeny.dev/environment/environment4_%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8%EB%A1%9C%EB%B8%8C%EB%9D%BC%EC%9A%B0%EC%A0%80%EA%B0%9D%EC%B2%B4%EC%A0%91%EA%B7%BC%ED%95%98%EA%B8%B02/)
+- [자바스크립트 X 브라우저 -2 (document)](https://taeny.dev/javascript/4%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8x%EB%B8%8C%EB%9D%BC%EC%9A%B0%EC%A0%802/)
 
 ## 1-1. nodeJS란?
 
@@ -37,15 +37,13 @@ to-heading: 5
 
 > nodeJS는 크롬과 같은 v8 자바스크립트 엔진을 사용한다.
 
-[브라우저작동원리>자바스크립트엔진](https://taeny.dev/environment/environment1_%EC%9B%B9%EB%B8%8C%EB%9D%BC%EC%9A%B0%EC%A0%80%EC%9E%91%EB%8F%99%EC%9B%90%EB%A6%AC/#2-2-%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8%EC%97%94%EC%A7%84)
-
 그리고 html에서는 `<script></script>` 태그로 자바스크립트파일을 불러와 실행 시켰다면 nodeJS 에서는 `node 파일이름.js` 처럼 명령어를 통해 자바스크립트를 실행한다.
 
 ## 1-2. nodeJS 작동원리
 
 nodeJS는 실행컨텍스트 내에서 대표적으로 싱글스레드, 비동기 방식으로 자바스크립트를 실행한다.
 
-[자바스크립트작동원리](http://localhost:8000/environment/environment2_%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8%EC%9E%91%EB%8F%99%EC%9B%90%EB%A6%AC/)
+[자바스크립트작동원리](https://taeny.dev/javascript/2%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8%EC%9E%91%EB%8F%99%EC%9B%90%EB%A6%AC/)
 
 # 2. nodeJS 가 하는일
 
@@ -55,7 +53,7 @@ nodeJS는 실행컨텍스트 내에서 대표적으로 싱글스레드, 비동�
 
 웹의 작동원리는 브라우저에서 다른 컴퓨터(서버)의 프로세스에 포트를 통해 접근해서 필요한 소스를 받아오는 식이다.
 
-[웹작동원리](https://taeny.dev/environment/environment1_%EC%9B%B9%EB%B8%8C%EB%9D%BC%EC%9A%B0%EC%A0%80%EC%9E%91%EB%8F%99%EC%9B%90%EB%A6%AC/#1-%EC%9B%B9-%EC%9E%91%EB%8F%99%EC%9B%90%EB%A6%AC)
+[웹작동원리](https://taeny.dev/javascript/1%EC%9B%B9%EB%B8%8C%EB%9D%BC%EC%9A%B0%EC%A0%80%EC%9E%91%EB%8F%99%EC%9B%90%EB%A6%AC/)
 
 만약 다른 사용자가 웹을 통하여 내 프로그램에 접근하고 싶을 때, 내 프로그램은 컴퓨터 어디선가 프로세스 형태로 돌아가고 있어야 하고 nodeJS는 내 컴퓨터의 리소스를 사용해 프로그램을 돌려준다. (즉 nodeJS 내장 자바스크립트 엔진을 이용해 자바스크립트를 실행시켜준다.)
 
@@ -75,7 +73,7 @@ nodeJS는 실행컨텍스트 내에서 대표적으로 싱글스레드, 비동�
 
 의존성 부여는 자바스크립트 실행 컨텍스트의 `scope chain`과 관련이 있다.
 
-[실행컨텍스트>scopechain](https://taeny.dev/environment/env2_%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8%EC%9E%91%EB%8F%99%EC%9B%90%EB%A6%AC/#3-2-scope-chain)
+[실행컨텍스트>scopechain](https://taeny.dev/javascript/2%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8%EC%9E%91%EB%8F%99%EC%9B%90%EB%A6%AC/#3-%EC%8B%A4%ED%96%89-%EC%BB%A8%ED%85%8D%EC%8A%A4%ED%8A%B8)
 
 자바스크립트는 실행 컨텍스트 내에서 현재 스코프의 변수와 함수를 우선적으로 스캔하고 없을 시, scope chain 을 참조해 다음 스코프로 넘어간다.
 
