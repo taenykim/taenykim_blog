@@ -1,7 +1,7 @@
 ---
-title: 자바스크립트 nodeJS에서 실행하기 -3
+title: 7) 자바스크립트 X nodeJS -3 (내장 모듈)
 date: 2020-02-09 16:02:23
-category: environment
+category: javascript
 draft: false
 ---
 

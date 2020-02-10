@@ -1,6 +1,6 @@
 ---
 title: CSS cheatsheet (v.20.02.10)
-date: 2020-02-10 13:02:26
+date: 2020-02-10 12:02:09
 category: language
 draft: false
 ---
