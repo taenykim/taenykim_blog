@@ -264,3 +264,5 @@ var exports = module.exports
 > 환경변수는 key-value 값의 형태로 정의되어있으며, 예시로는 JDK를 설치한 후, 해당 key값(value)에 path(경로) 를 넣어주는 경우가 있다.
 
 ###### :question: process.env 용법 (process.env.NODEENV & dev + prod 이런거 찾아보기)
+
+###### :question: process.stdin / process.stdout 입출력 알아보기
