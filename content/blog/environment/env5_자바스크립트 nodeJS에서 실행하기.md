@@ -17,9 +17,9 @@ to-heading: 5
 
 - [웹브라우저작동원리](https://taeny.dev/environment/environment1_%EC%9B%B9%EB%B8%8C%EB%9D%BC%EC%9A%B0%EC%A0%80%EC%9E%91%EB%8F%99%EC%9B%90%EB%A6%AC/)
 
-- [자바스크립트로브라우저객체접근하기-1](https://taeny.dev/environment/environment3_%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8%EB%A1%9C%EB%B8%8C%EB%9D%BC%EC%9A%B0%EC%A0%80%EA%B0%9D%EC%B2%B4%EC%A0%91%EA%B7%BC%ED%95%98%EA%B8%B01/)
+- [자바스크립트로브라우저객체접근하기1(window)](https://taeny.dev/environment/environment3_%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8%EB%A1%9C%EB%B8%8C%EB%9D%BC%EC%9A%B0%EC%A0%80%EA%B0%9D%EC%B2%B4%EC%A0%91%EA%B7%BC%ED%95%98%EA%B8%B01/)
 
-- [자바스크립트로브라우저객체접근하기-2](https://taeny.dev/environment/environment4_%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8%EB%A1%9C%EB%B8%8C%EB%9D%BC%EC%9A%B0%EC%A0%80%EA%B0%9D%EC%B2%B4%EC%A0%91%EA%B7%BC%ED%95%98%EA%B8%B02/)
+- [자바스크립트로브라우저객체접근하기2(document)](https://taeny.dev/environment/environment4_%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8%EB%A1%9C%EB%B8%8C%EB%9D%BC%EC%9A%B0%EC%A0%80%EA%B0%9D%EC%B2%B4%EC%A0%91%EA%B7%BC%ED%95%98%EA%B8%B02/)
 
 ## 1-1. nodeJS란?
 
@@ -103,19 +103,23 @@ script태그에 넣어주는 방식은 브라우저에 국한되므로 많은 �
 ### 모듈화
 
 ```javascript
-// 내용물
-const variable1 = {}
-function functionA() {}
-function functionB() {}
+// 부분 모듈화
+exports.function functionA() {}
+exports.function functionB() {}
 
 // 전체 모듈화
+// moduleName1 객체에 모든 내용 담기!
 module.exports = moduleName1
 ```
 
 ### 모듈 사용
 
 ```javascript
+// 경로로 사용
 const module1 = require('./moduleName1')
+
+// node_modules or 내장모듈 사용
+const express = require('express')
 ```
 
 ## 4-5. 자바스크립트 문법(ES6)
@@ -127,17 +131,13 @@ nodeJS에서는 일반적으로 CommonJS 방식을 사용하나 점차적으로 
 ### 모듈화
 
 ```javascript
-// 내용물
-const variable1 = {}
-function functionA() {}
-function functionB() {}
+// 부분 모듈화
+export function functionA() {}
+export function functionB() {}
 
-// 전체 모듈화
-export *;
 // :star: 전체 모듈화 (default export)
+// 보통 파일 안에 하나의 모듈을 모듈화 할 때 사용!
 export default moduleName2
-// 함수만 모듈화
-export function moduleFunc() {};
 ```
 
 ### 모듈 사용
@@ -146,9 +146,14 @@ export function moduleFunc() {};
 // 전체 모듈 사용
 import * from './moduleName2'
 // :star: 전체 모듈 사용 (default import)
-import module from './moduleName2'
-// 함수만 모듈 사용
-import { moduleFunc } from module from './moduleName2'
+// 보통 파일 안에 하나의 모듈을 모듈화 할 때 사용!
+import whatever from './moduleName2'
+
+// 부분 모듈 사용
+import { moduleFunc } from './moduleName2'
+
+// node_modules or 내장모듈 사용
+import os from 'os'
 ```
 
 `export vs default export`
