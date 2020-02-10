@@ -1,5 +1,5 @@
 ---
-title: 자바스크립트 nodeJS에서 실행하기 -2 (작성중)
+title: 자바스크립트 nodeJS에서 실행하기 -2
 date: 2020-02-08 19:02:56
 category: environment
 draft: false
@@ -127,7 +127,7 @@ npm 을 통하여 패키지를 다운로드 받으면 자동으로 기록된다.
 ```json
  "devDependencies": {
     "nodemon": "^2.0.2",
-    "webpack": "^4.41.5"
+    "webpack": "~4.41.5"
   }
 ```
 
@@ -163,7 +163,7 @@ package-lock.json 파일은 node_modules 에 저장된 패키지의 모듈들의
 
 # 2. nodeJS 내장 객체
 
-## 2-1. global
+## 2-1. global 전역객체
 
 앞선 포스트에서 브라우저에서 자바스크립트를 실행할 때, 실행컨텍스트의 scope chain에 전역객체로 `window`가 담기는 것을 알아보았다.
 
@@ -175,7 +175,8 @@ nodeJS 에서도 console.log() 를 쓸 수 있으니 console객체를 내장한 
 
 ```javascript
 // :fire: nodeJS 환경에서 this 출력
-node > console.log(this)
+node
+> console.log(this)
 // 결과값 : global <Object>
 
 // :fire: nodeJS로 console.log(this)가 적힌 프로그램 실행
@@ -196,7 +197,7 @@ node test2.js
 
 nodeJS 프로그램 내부에서 this 는 global 전역객체를 가리키고 nodeJS를 통해 실행한 javascript 프로그램의 this는 해당 모듈을 가리킨다.
 
-# 3. global 내장기능들
+# 3. global 객체 내장기능들
 
 ## 3-1. window 객체와 비슷한 부분
 
@@ -208,8 +209,57 @@ nodeJS 프로그램 내부에서 this 는 global 전역객체를 가리키고 no
 
 [window내부메소드>setTimeout()](https://taeny.dev/environment/env3_%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8%EB%A1%9C%EB%B8%8C%EB%9D%BC%EC%9A%B0%EC%A0%80%EA%B0%9D%EC%B2%B4%EC%A0%91%EA%B7%BC%ED%95%98%EA%B8%B01/#3-3-settimeout-cleartimeout)
 
-## 3-2. global 고유 기능
+## 3-2. global 객체 고유 기능
 
-### 1. \_\_filename, \_\_dirname
+## 3-3. \_\_dirname, \_\_filename
 
-(작성중)
+`dirname` : 현재 디렉토리 경로
+
+`dirname` : 현재 디렉토리 경로 + 파일명
+
+## 3-4. CommonJS 문법(module 객체, exports 객체)
+
+[모듈시스템>CommonJS란?](http://localhost:8001/environment/env5_%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8%20nodeJS%EC%97%90%EC%84%9C%20%EC%8B%A4%ED%96%89%ED%95%98%EA%B8%B0/#4-3-commonjs%EB%9E%80)
+
+```javascript
+// 내용물
+const variable1 = {}
+function functionA() {}
+function functionB() {}
+
+// :star: module 객체 사용
+module.exports = moduleName1
+```
+
+모듈을 만들 때, module이라는 객체 안의 exports 속성(객체)에 모듈이름과 같이 넣어준다.
+
+```javascript
+// :star: exports 속성 사용
+exports.funcA = function functionA() {}
+exports.funcB = function functionB() {}
+```
+
+모듈객체를 이용하지 않고 exports 객체로서 module.exports에 접근할 수도 있다.
+
+> module 객체를 사용하지 않고 exports 객체를 사용할 때는 모듈의 속성을 꼭 명시해야함.
+
+`module 과 module.exports 의 참조방식`
+
+```javascript
+var module = { exports: {} }
+var exports = module.exports
+```
+
+## 3-5. process 객체
+
+현재 nodeJS 에서 실행되는 프로세스에 관한 정보를 담고있는 객체
+
+### process.env
+
+해당 프로그램의 `환경변수`를 담고있는 객체
+
+> **환경변수** : 프로세스가 컴퓨터에서 동작하는 방식에 영향을 미치는, 동적인 값들의 모임
+
+> 환경변수는 key-value 값의 형태로 정의되어있으며, 예시로는 JDK를 설치한 후, 해당 key값(value)에 path(경로) 를 넣어주는 경우가 있다.
+
+###### :question: process.env 용법 (process.env.NODEENV & dev + prod 이런거 찾아보기)
