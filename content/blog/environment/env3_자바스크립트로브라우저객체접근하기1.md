@@ -1,5 +1,5 @@
 ---
-title: 자바스크립트로 브라우저 객체 접근하기 - 1
+title: 자바스크립트로 브라우저 객체 접근하기 - 1 (window)
 date: 2020-02-07 11:02:96
 category: environment
 draft: false

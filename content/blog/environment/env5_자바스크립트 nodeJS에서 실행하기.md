@@ -1,5 +1,5 @@
 ---
-title: 자바스크립트 nodeJS에서 실행하기 -1
+title: 자바스크립트 nodeJS에서 실행하기 -1 (module)
 date: 2020-02-08 15:02:13
 category: environment
 draft: false
