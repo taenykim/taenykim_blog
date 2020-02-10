@@ -57,7 +57,7 @@ document.body.appendChild(newtext)
 
 `document.createDocumentFragment()` : .
 
-###### :question: dom 리렌더링 과정 학습 후 다시오기
+###### :hatched_chick: dom 리렌더링 과정 학습 후 다시오기
 
 ## 3-2. READ 메소드
 

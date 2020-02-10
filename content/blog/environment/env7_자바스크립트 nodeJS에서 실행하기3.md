@@ -25,7 +25,7 @@ to-heading: 5
 
 nodeJS 프로그램을 실행시키는 운영체제(os) 정보를 가져온다.
 
-###### :question: 실제 사용하게 될 때 학습!
+> 실제 사용해볼 시점에 따로 참고하기!
 
 ## 1-2. path
 
@@ -133,4 +133,4 @@ rl.on('line', function(line) {
 
 ## 1-5. http
 
-###### :question: express 학습 후 다시오기!
+###### :hatched_chick: express 학습 후 다시오기!

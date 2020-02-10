@@ -123,7 +123,7 @@ scope는 이벤트루프의 call stack 처럼 함수가 호출될 때 쌓이는 
 
 `lexical scoping` (정적 스코프) : scope는 함수가 선언될 때 정의된다!
 
-###### :question: (엔진이 scope를 호이스팅처럼 컴파일 시 결정하는 건가?)
+###### :question: 엔진이 scope를 호이스팅처럼 컴파일 시 결정하는 건가?
 
 ```javascript
 function foo() {

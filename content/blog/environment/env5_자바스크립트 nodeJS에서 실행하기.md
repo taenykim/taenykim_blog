@@ -126,7 +126,7 @@ const express = require('express')
 
 nodeJS에서는 일반적으로 CommonJS 방식을 사용하나 점차적으로 ECMAScript 모듈 방식도 도입 중이다.
 
-###### :question: 현재 node 13.2.0 에서 package.json {"type":"module"} 이나 .mjs 방식으로 사용가능한듯!
+###### :bulb: 현재 node 13.2.0 에서 package.json {"type":"module"} 이나 .mjs 방식으로 사용가능한듯!
 
 ### 모듈화
 

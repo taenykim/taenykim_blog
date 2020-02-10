@@ -68,11 +68,11 @@ window 의 좌상단 좌표를 저장하는데, page가 window보다 커서 스�
 
 ## 2-4. frames, frameElement (속성)
 
-###### :question: \<iframe\> 학습 후 돌아오기!
+###### :hatched_chick: \<iframe\> 학습 후 돌아오기!
 
 ## 2-5. length (속성)
 
-###### :question: \<iframe\> 학습 후 돌아오기!
+###### :hatched_chick: \<iframe\> 학습 후 돌아오기!
 
 ## 2-6. console (객체)
 
@@ -135,7 +135,7 @@ var screen = {
 }
 ```
 
-###### :question: 반응형 웹 제작시, 명백히 어떤 환경인지(데스크탑, 태블릿, 모바일) 체크가 가능할듯!
+###### :question: 반응형 웹 제작시, 명백히 어떤 환경인지(데스크탑, 태블릿, 모바일) 체크할 때 screen 객체 쓰는 건가?
 
 # 3. window 내부 메소드
 
