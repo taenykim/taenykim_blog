@@ -19,7 +19,7 @@ to-heading: 5
 
 - [자바스크립트 X 브라우저 -1 (window)](https://taeny.dev/javascript/3%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8x%EB%B8%8C%EB%9D%BC%EC%9A%B0%EC%A0%801/)
 
-- [자바스크립트 X 브라우저 -2 (document)](https://taeny.dev/javascript/4%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8x%EB%B8%8C%EB%9D%BC%EC%9A%B0%EC%A0%802/)
+- [자바스크립트 X 브라우저 -2 (document, 이벤트)](https://taeny.dev/javascript/4%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8x%EB%B8%8C%EB%9D%BC%EC%9A%B0%EC%A0%802/)
 
 ## 1-1. nodeJS란?
 
