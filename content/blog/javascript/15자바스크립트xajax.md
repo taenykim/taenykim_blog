@@ -1,5 +1,5 @@
 ---
-title: 15) 자바스크립트 X AJAX (작성중)
+title: 15) 자바스크립트 X AJAX -1 (fetch, axios, callback, promise, async await)
 date: 2020-02-17 13:02:11
 category: javascript
 draft: false
@@ -117,7 +117,3 @@ await methodName()
 주의 : await 는 Promise 객체를 반환하는 코드 앞에 붙여야함.
 
 > async await 도 가독성을 높여줄 뿐, 역시 Promise를 이용한다.
-
-# 4. 리덕스 사가
-
-(작성중)
