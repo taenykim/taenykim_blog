@@ -118,8 +118,10 @@ export default function* postSaga() {
 
 `all`
 
-:hatched_chick: 다시 돌아오기
+:hatched_chick:
 
 `throttle`
 
-:hatched_chick: 다시 돌아오기
+:hatched_chick:
+
+###### :hatched_chick: 사가는 다시 학습하기!
