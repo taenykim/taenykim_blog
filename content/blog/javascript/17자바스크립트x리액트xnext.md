@@ -1,5 +1,5 @@
 ---
-title: 17) 자바스크립트 X 리액트 X NEXT (Routing system, SSR) (작성중)
+title: 17) 자바스크립트 X 리액트 X NEXT (Routing system, SSR)
 date: 2020-02-17 16:02:51
 category: javascript
 draft: false
@@ -167,6 +167,14 @@ Error.getInitialProps = ({ res, err }) => {
 export default Error
 ```
 
+## 2-7. dynamic Routing
+
+1. pages > [] 이용하기
+
+2. express 와 같이 사용하기
+
+:hatched_chick: 다시 돌아와서 학습하기!
+
 # 3. SSR (server-side rendering)
 
 ## 3-1. 렌더링??
@@ -253,10 +261,83 @@ next 는 위에서 설명했듯, 리액트 프레임워크로 간단한 라우�
 
 하지만 next를 이용하면 SSR을 적용시킬 수 있다.
 
-SSR 덕분에 `SEO 최적화`를 할 수 있고 `미리 필요한 데이터를 로드`할 수 있다.
+SSR 덕분에
+
+1. `SEO 최적화`를 할 수 있고
+
+2. `미리 필요한 데이터를 로드`해서 더나은 User Experience를 제공할 수 있다.
+
+> :bulb: 사용자 인터렉션을 클라이언트 사이드 렌더링으로 구현하고, 필요에 따라 서버사이드 렌더링을 같이하면 더나은 UX와 SEO가 가능함!! (`SPA X SSR`)
+
+> 즉, 초기 랜더링은 SSR, 앱 내부변화는 CSR
 
 ## 4-1. next Life-cycle
 
+![](./images/nextlifecycle.jpeg)
+
 ## 4-2. getInitialProps
 
-(작성중)
+> next SSR의 핵심 메소드!
+
+getInitialProps 는 초기 APP 컴포넌트를 실행할 때, 맨 처음 실행된다.
+
+이 메소드를 사옹해,
+
+1. 쿠키를 넣어준다거나
+
+2. 미리 로드되어야할 데이터들을 넣어준다거나 (axios나 비동기 action dispatch 등의 ajax비동기처리도 가능)
+
+3. 미리 로드되어야할 스타일시트 등을 넣어줄 수 있다.
+
+## 4-3. getInialProps 사용법(class, functional)
+
+`class형` : Document 컴포넌트에서 쓰일듯..!
+
+```jsx
+import fetch from 'isomorphic-unfetch'
+import Document from 'next/document'
+
+class Page extends Document {
+  static async getInitialProps(ctx) {
+    const res = await fetch('https://api.github.com/repos/zeit/next.js')
+    const json = await res.json()
+    return { stars: json.stargazers_count }
+  }
+
+  render() {
+    return <div>Next stars: {this.props.stars}</div>
+  }
+}
+
+export default Page
+```
+
+ctx에는 쿼리 데이터 등 next 서버데이터 요소들이 담겨있다.
+
+> console.log() 해볼것!
+
+`function 형`
+
+```jsx
+import fetch from 'isomorphic-unfetch'
+
+function Page({ stars }) {
+  return <div>Next stars: {stars}</div>
+}
+
+Page.getInitialProps = async ctx => {
+  const res = await fetch('https://api.github.com/repos/zeit/next.js')
+  const json = await res.json()
+  return { stars: json.stargazers_count }
+}
+
+export default Page
+```
+
+## 4-3. getInitialProps 동작 메커니즘
+
+> For the initial page load, `getInitialProps` will execute on the **server** only. `getInitialProps` will only be executed on the **client** when navigating to a different route via the next/link component or by using next/router.
+
+1. 처음에 페이지를 로드할 때, next 서버에서 getInitialProps 실행
+
+2. 라우팅시, 클라이언트(브라우저)에서 getInitalProps 실행
