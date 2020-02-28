@@ -4,6 +4,14 @@ module.exports = {
   siteMetadata: metaConfig,
   plugins: [
     {
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        host: 'https://taeny.dev',
+        sitemap: 'https://taeny.dev/sitemap.xml',
+        policy: [{ userAgent: '*', allow: '/' }],
+      },
+    },
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/content/blog`,
