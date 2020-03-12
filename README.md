@@ -4,7 +4,7 @@
 
 ## 1. site Link
 
-[<Taenylog/>](https://taeny.dev)
+[\<Taenylog\/\>](https://taeny.dev)
 
 ## 2. starter package
 
