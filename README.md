@@ -6,6 +6,8 @@
 
 [\<Taenylog\/\>](https://taeny.dev)
 
+> "Hello world"
+
 ### 2. starter package
 
 [gatsby-starter-bee](https://github.com/JaeYeopHan/gatsby-starter-bee)
