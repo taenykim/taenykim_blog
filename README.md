@@ -2,28 +2,28 @@
 
 # 웹 프론트엔드 공부 블로그
 
-## 1. site Link
+### 1. site Link
 
 [\<Taenylog\/\>](https://taeny.dev)
 
-## 2. starter package
+### 2. starter package
 
 [gatsby-starter-bee](https://github.com/JaeYeopHan/gatsby-starter-bee)
 
 # blog description
 
-## 1. :pencil2: essay
+### 1. :pencil2: essay
 
 > 개발에 관한 나의 생각, 느낌의 기록
 
-## 2. :closed_book: javascript
+### 2. :closed_book: javascript
 
 > 자바스크립트 공부 내용 기록 (TIL)
 
-## 3. 🔮 project
+### 3. 🔮 project
 
 > 프로젝트 제작노트
 
-## 4. 🤖 language
+### 4. 🤖 language
 
 > cheetsheat, reference 등 기록
