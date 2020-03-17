@@ -92,7 +92,7 @@ module.exports = {
         start_url: `/`,
         background_color: `#ffffff`,
         theme_color: `#663399`,
-        display: `standalone`,
+        display: `minimal-ui`,
         icon: metaConfig.icon,
       },
     },
