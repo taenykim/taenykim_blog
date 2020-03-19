@@ -5,9 +5,9 @@ category: essay
 draft: false
 ---
 
-![](./images/devmatching.png)
-
 2020년 3월 14일 토요일, 오후 1시부터 5시까지 [프로그래머스](https://programmers.co.kr/)에서 진행했던 웹 프론트엔드 Dev-matching 에 대한 후기 글입니다. 테스트 이후 과제를 다시 풀어보며 과정과 생각을 기록해보았습니다.
+
+![](./images/devmatching.png)
 
 > 사과 emoji는 과제테스트에서 요구하는 필수 기능입니다.
 
