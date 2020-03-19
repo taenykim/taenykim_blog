@@ -29,7 +29,7 @@ to-heading: 5
 
 이러한 채용 프로그램도 있다는 것을 처음 알게 되었고 좋은 기회, 경험이 될 것 같아 고민없이 지원하게 되었다.
 
-![](./images/cat1.png)
+![](./images/devmatching2.png)
 
 > 출처 : [프로그래머스](<(https://programmers.co.kr/)>)
 
@@ -37,7 +37,7 @@ Dev-matching은 코딩테스트가 아니라 과제테스트로 진행이 되었
 
 # 2. 준비
 
-![](./images/cat2.png)
+![](./images/devmatching3.png)
 
 > 출처 : [프로그래머스](<(https://programmers.co.kr/)>)
 
@@ -49,7 +49,7 @@ Dev-matching은 코딩테스트가 아니라 과제테스트로 진행이 되었
 
 과제테스트는 테스트 이전에 공개되었듯이, 고양이 검색 웹사이트의 기본 틀이 주어졌다.
 
-![](./images/cat3.png)
+![](./images/devmatching4.png)
 
 > 다시만들어본 고양이 검색 웹사이트 (과제)
 
@@ -165,7 +165,7 @@ AJAX 비동기요청이 완료된 후에 해당 모달창에 받은 정보를 �
 
 데이터 불러오는 중임을 사용자에게 알리는 UI를 만드는 문제였다. 데이터가 로드되면 div.SearchResult 선택자 태그 안의 innerHTML 속성값으로 정보를 넣는 구조였는데, 데이터 비동기 요청 전에 innerHTML로 로딩중이라는 텍스트를 넣어주어서 어차피 데이터 로드가 되면 innerHTML로 정보가 덮어써지는 것을 이용해서 구현하였다.
 
-![](./images/cat4.png)
+![](./images/devmatching5.png)
 
 <hr/>
 
