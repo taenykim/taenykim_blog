@@ -106,6 +106,14 @@ str.replace('cat', 'dog')
 // "dog is barking"
 ```
 
+## 1-9. localeCompare() - 사전순 정렬
+
+```js
+let arr = ['b', 'a', 'c']
+arr.sort((a, b) => a.localeCompare(b))
+// ["a", "b", "c"]
+```
+
 # 2. Object
 
 ## 2-1. Object.keys(), Object.values() - 객체 keys, values 읽기
