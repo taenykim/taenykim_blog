@@ -391,3 +391,26 @@ const str = 'abcd'
 str.search(/b/g)
 // 1
 ```
+
+# 9. Math 객체
+
+## 9-1. Math.ceil() - 올림
+
+## 9-2. Math.floor() - 내림
+
+## 9-3. Math.round() - 반올림
+
+## 9-4. Math.random() - 난수생성 (0<=x<1)
+
+## 9-5. Math.max(), Math.min() - 최대,최소값
+
+> 배열일 경우,
+
+```js
+Math.max(...[1, 2, 3, 6, 4])
+// 6
+Math.max.apply(null, [1, 2, 3, 6, 4])
+// 6
+```
+
+## 9-6. Math.pow(x,y), Math.sqrt() - 제곱, 제곱근
