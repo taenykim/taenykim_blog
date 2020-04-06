@@ -114,6 +114,17 @@ arr.sort((a, b) => a.localeCompare(b))
 // ["a", "b", "c"]
 ```
 
+## 1-10. fromCharCode(), charCodeAt() - 아스키코드변환
+
+```js
+'a'.charCodeAt(0)
+// 해당문자에 대한 아스키코드 반환
+// 97
+String.fromCharCode(97)
+// 아스키코드에 대한 문자 반환
+// 'a'
+```
+
 # 2. Object
 
 ## 2-1. Object.keys(), Object.values() - 객체 keys, values 읽기
