@@ -433,3 +433,13 @@ Math.max.apply(null, [1, 2, 3, 6, 4])
 ```
 
 ## 9-6. Math.pow(x,y), Math.sqrt() - 제곱, 제곱근
+
+# 10. Set
+
+## 10-1. add()
+
+## 10-2. delete()
+
+## 10-3. has()
+
+## 10-4. delete()
