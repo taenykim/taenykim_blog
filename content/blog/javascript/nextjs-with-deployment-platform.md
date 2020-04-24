@@ -9,6 +9,8 @@ draft: false
 
 여러 기능들을 구현하는 연습을 하기위해서 [소마법 프로젝트](https://github.com/taenykim/small-magic-project)라는 것을 하고 있다. 배포는 Vercel을 이용했었는데 어느순간, Vercel이 내 프로젝트와 맞지 않다는 것을 깨닫게 되었다. 그래서 다른 배포 플랫폼으로 이전할 겸, 서버리스에 대한 개념을 알아보고 대표적인 3개의 배포 플랫폼을 `Netlify`, `Vercel`, `Github page` 모두 사용해보며 비교해보기로 했다.
 
+> ✏️ Vercel 배포시, 빌드명령어를 잘못 넣어주어서 생긴 나의 잘못된 생각이었다. Vercel 미안해유.. [관련아티클로 이동](#%EF%B8%8F-serverless-functions-관련-추가)
+
 > [Vercel](https://vercel.com/blog/zeit-is-now-vercel)은 기존에는 zeit now였었는데, '2020년 4월 21일'부터 **zeit**에서 Vercel로 브랜드 네임을 바꿨다.
 
 > 현재 진행중인 [소마법 프로젝트 배포용](https://github.com/taenykim/small-magic-project-deployment)에 대한 배포를 기준으로 알아보았으며, 프로젝트마다, 사람마다 선호하는 방식이 다를 수 있다.
@@ -155,7 +157,17 @@ serverless function은 실제 서버사이드에서 렌더링 되는 함수를 �
 
 > 12개를 넘으면 빌드를 실패한다.
 
-내가 소마법프로젝트를 Vercel에서 다른 배포플랫폼으로 이전을 결정하게 된 계기이다.
+## ✏️ Serverless Functions 관련 추가
+
+Vercel은 nextJS로 export한 Static HTML에서 대해서는 Serverless Functions로 카운트 하지 않는다.
+
+![](./images/vercelfeedback.png)
+
+호스팅옵션을 node 로 할시, **next start**를 사용하지만, static HTML 배포시에는 **next export**를 해야한다. 즉 vercel 배포시, 배포 명령어 커맨드를 `next build` 대신 `next export`를 해주어야한다.
+
+[참고링크 : Vercel limit](https://vercel.com/docs/v2/platform/limits?query=limit#)
+
+[참고링크 : nextJS 호스팅 옵션](https://nextjs.org/docs/deployment#other-hosting-options)
 
 # 4. Faas vs Github page
 
@@ -368,7 +380,22 @@ github 클릭
 
 > Vercel로 배포한 [소마법 프로젝트 배포용](https://small-magic-project-deployment.now.sh/)
 
-<hr/>
+## 7-1. 스크립트 작성하기
+
+package.json 파일 안의 "script" 속성에 "deploy"하는 명령어를 추가한다.
+
+> github page 배포와 구분을 두기 위해 "vercel-deploy" 라는 이름으로 작성했다.
+
+```json
+ "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start",
+    "vercel-deploy": "next build && next export"
+  },
+```
+
+## 7-2. 실제 배포하기
 
 [Vercel](https://vercel.com/) 사이트에 접속해서 가입 혹은 로그인을 한 후, Import Project 클릭!
 
@@ -394,7 +421,9 @@ Root Directory 를 설정하는 창. 빈칸으로 진행해도 상관없다.
 
 ![](./images/vercel6.png)
 
-마지막으로 배포시에 사용할 빌드 명령어와 폴더이름을 설정하여야 하는데 위에 **framework preset** 을 Next.js로 설정하고 바로 deploy를 눌러주면 된다.
+마지막으로 배포시에 사용할 빌드 명령어와 폴더이름을 설정하여야 하는데 위에 **framework preset** 을 Next.js로 설정하고 빌드 명령어를 실제 배포 시, 사용될 명령어를 입력해주고 바로 deploy를 눌러주면 된다.
+
+> 빌드명령어는 `next export`를 실행해야 함.
 
 > nextJS 이외에도 create-react-app, Gatsby, vue.js, angular, jekyll 등 다양한 framework preset 들이 있다.
 
@@ -408,7 +437,13 @@ Root Directory 를 설정하는 창. 빈칸으로 진행해도 상관없다.
 
 해당 포스팅을 하면서 여러 플랫폼끼리 비교하다 보니 플랫폼별로 장단점이 보였다. 또한 nextJS 프레임워크에 대한 여러 다양한 견해들도 접할 수 있었다.
 
-아직 어떤 플랫폼을 사용해야 좋다고 말할 수 있는 수준이 아니지만, 현재 하고 있는 [소마법 프로젝트](https://github.com/taenykim/small-magic-project)의 경우에는 Vercel 보다는 Netlify가 더 적합해 보였다. 자신이 진행하는 프로젝트에 잘맞는 플랫폼을 선택하는 것도 하나의 역량이 아닐까 생각해보게 되었다.
+아직 어떤 플랫폼을 사용해야 좋다고 말할 수 있는 수준이 아니지만, 자신이 진행하는 프로젝트에 잘맞는 플랫폼을 선택하는 것도 하나의 역량이 아닐까 생각해보게 되었다.
+
+추가로 **WDever** 님의 댓글 덕분에 nextJS의 호스팅 옵션이 두가지가 있다는 것을 알게 되었다. 다음에는 nextJS의 서버사이드 렌더링 방식에 대해서 깊게 공부해봐야겠다.
+
+[nextJS/two forms of pre-rendering](https://nextjs.org/docs/basic-features/pages#two-forms-of-pre-rendering)
+
+[nextJS/other hosting options](https://nextjs.org/docs/deployment#other-hosting-options)
 
 <details>
 <summary>참고링크[접기/펼치기]</summary>
