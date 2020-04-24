@@ -159,7 +159,7 @@ serverless function은 실제 서버사이드에서 렌더링 되는 함수를 �
 
 ## ✏️ Serverless Functions 관련 추가
 
-Vercel은 nextJS로 export한 Static HTML에서 대해서는 Serverless Functions로 카운트 하지 않는다.
+기존에 위의 사진 처럼 nextJS 페이지가 11개(404페이지까지 12개)를 넘어가면 Serverless Functions 제한으로 인해 빌드가 안되었다. 근데 Vercel은 nextJS로 export한 Static HTML에서 대해서는 Serverless Functions로 카운트 하지 않는다고 공식문서에 언급이 되어있었다.
 
 ![](./images/vercelfeedback.png)
 
