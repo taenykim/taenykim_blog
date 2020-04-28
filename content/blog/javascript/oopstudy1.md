@@ -23,7 +23,9 @@ to-heading: 2
 <summary>시리즈 한눈에보기[접기/펼치기]</summary>
 <div markdown="1">
 
-- [자바스크립트 코딩 컨벤션과 테스트 - OOP Study 1](https://taeny.dev/)
+- [자바스크립트 코딩 컨벤션과 테스트 - OOP Study 1](https://taeny.dev/javascript/oopstudy1/)
+
+- [제목미정 - OOP Study 2](https://taeny.dev/javascript/oopstudy2/)
 
 </div>
 </details>
