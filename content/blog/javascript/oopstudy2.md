@@ -113,6 +113,8 @@ FLUX 패턴은 MVC의 **양방향 데이터 바인딩**의 단점을 해결하�
 
 racing Car 미션은 **mvc패턴으로 디자인**하는 것과 **모든 로직에 단위 테스트를 구현**하는 것이 중심의 미션이었는데, 나는 java가 아니라 javascript였기 때문에 **MVVM**과 **FLUX** 모델을 사용해서 디자인해보았다. 정확히 대입시키는 것은 어렵겠지만, containers 폴더의 App.tsx를 `View Model` 로 사용자의 View에서 action을 전달받는 역할을, components의 Processes.tsx와 Result.tsx를 변경된 View를 출력하는 `View` 의 역할을 하도록 하였다. 그리고 마지막으로 modules라는 폴더에는 `Model` 의 역할을 하는 함수들을 모듈형태로 모아두었다. 그리고 React hooks 를 통해서 FLUX패턴을 구현해보았다.
 
+> 이번 미션에 게임적인 요소까지 추가해서 소마법 프로젝트에도 추가해보았다. [소마법프로젝트/racingcar](https://small-magic-project.now.sh/racingcar)
+
 ```
 java-racingCar-1
 ├── src
