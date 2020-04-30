@@ -21,7 +21,7 @@ to-heading: 2
 
 사용자가 입력한 파일에 접근하려면 input 엘리먼트에 접근해서 files 프로퍼티를 참조하면 되는데, 직접 DOM에 접근해서 접근할 수도 있고, e.target 을 통하여 onChange 이벤트핸들러를 등록하여 입력받은 값을 가져올 수도 있다.
 
-> 1. 직접 DOM에 접근하는 방법
+### 1. 직접 DOM에 접근하는 방법
 
 ```jsx
 // 리액트 hooks 사용
@@ -33,7 +33,11 @@ useEffect(() => {
 return <input type="file" id="fileInput" />
 ```
 
-> 2. [e.target](https://taeny.dev/javascript/4%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8x%EB%B8%8C%EB%9D%BC%EC%9A%B0%EC%A0%802/#6-4-%EC%9D%B4%EB%B2%A4%ED%8A%B8-%EC%86%8D%EC%84%B1)으로 이벤트가 일어난 위치 DOM 접근
+> 🔽 콘솔 출력화면
+
+![](./images/fileconsole1.png)
+
+### 2. [e.target](https://taeny.dev/javascript/4%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8x%EB%B8%8C%EB%9D%BC%EC%9A%B0%EC%A0%802/#6-4-%EC%9D%B4%EB%B2%A4%ED%8A%B8-%EC%86%8D%EC%84%B1)으로 이벤트가 일어난 위치 DOM 접근
 
 ```jsx
 const handleImage = e => {
@@ -42,6 +46,12 @@ const handleImage = e => {
 
 return <input type="file" id="fileInput" onChange={handleFiles} />
 ```
+
+> 🔽 콘솔 출력화면
+
+![](./images/fileconsole2.png)
+
+<hr/>
 
 파일을 업로드 한 후, file input 엘리먼트에 접근해서 files 프로퍼티를 출력해보면 `fileList` 라는 객체가 출력되는 것을 볼 수 있다. fileList 객체 프로퍼티는 0,1 ... 형태의 숫자로, 그리고 값에는 File객체가 들어있다. 그래서 files[i] 이런 식으로 i 번째의 file 객체에도 접근이 가능하다.
 
@@ -75,9 +85,9 @@ const file = {
 
 > 해당파일은 192KB 크기임을 알 수 있다.
 
-5️⃣ **type** : 문자열인 파일의 MIME 타입 string타입으로 반환
+5️⃣ **type** : 문자열인 파일의 `MIME` 타입 string타입으로 반환
 
-> `MIME` 타입의 형태는 type/subtype 의 구조를 가지며, 다음과 같은 형태로 쓰인다.
+> MIME 타입의 형태는 type/subtype 의 구조를 가지며, 다음과 같은 형태로 쓰인다.
 
 ```
 text/plain
@@ -123,7 +133,7 @@ URL로 접근 하는 경우, 주요 특징으로는
 
 위의 URL로 접근하는 방법과 비교했을 때, 이러한 특징을 가진다.
 
-**🍎. 비동기적으로 실제 file의 데이터를 읽기 때문에 비동기적으로 일어나며, 시간이 느리고 메모리 사용량도 높다.**
+**🍎. 비동기적으로 실제 file의 데이터를 읽기 때문에, 시간이 느리고 메모리 사용량도 높다.**
 
 **🍎. 하지만 수동으로 해체하지 않아도 된다.(가비지 컬렉터에 의해 자동으로 해체)**
 
