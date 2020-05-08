@@ -7,11 +7,7 @@ draft: false
 
 ![](./images/nextjs-deployment.png)
 
-여러 기능들을 구현하는 연습을 하기위해서 [소마법 프로젝트](https://github.com/taenykim/small-magic-project)라는 것을 하고 있다. 배포는 Vercel을 이용했었는데 어느순간, Vercel이 내 프로젝트와 맞지 않다는 것을 깨닫게 되었다.
-
-> ✏️ Vercel 배포시, 빌드명령어를 잘못 넣어주어서 생긴 나의 잘못된 생각이었다. Vercel 미안해유.. [관련아티클로 이동](#%EF%B8%8F-serverless-functions-관련-추가)
-
-그래서 다른 배포 플랫폼으로 이전할 겸, 서버리스에 대한 개념을 알아보고 대표적인 3개의 배포 플랫폼을 **Netlify**, **Vercel**, **Github page** 모두 사용해보며 비교해보기로 했다.
+이번 포스팅에서는 , 서버리스에 대한 개념을 알아보고 대표적인 3개의 배포 플랫폼을 **Netlify**, **Vercel**, **Github page** 모두 사용해보며 비교해보기로 했다.
 
 > [Vercel](https://vercel.com/blog/zeit-is-now-vercel)은 기존에는 zeit now였었는데, '2020년 4월 21일'부터 **zeit**에서 Vercel로 브랜드 네임을 바꿨다.
 
