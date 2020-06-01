@@ -136,7 +136,7 @@ DOM TREE 생성과 비슷한 방식으로 CSS 스타일시트를 참조해서 **
 
 # 6. 참고자료
 
-참고자료는 [Web Graphics Archive](https://github.com/taenykim/Web_Graphics_Archive/tree/master/basic) 에 또한 업로드 되었으니 참고바랍니다.
+참고자료는 ❤️[Web Graphics Archive](https://github.com/taenykim/Web_Graphics_Archive/tree/master/basic)❤️ 에 업로드 되었으니 참고바랍니다.
 
 ## Computer Graphics
 
