@@ -1,11 +1,11 @@
 module.exports = {
   title: `< Taenylog  />`,
-  description: `웹 프론트엔드 공부 블로그 / 시간은 너의 편이다. / Learn in Public`,
+  description: `웹 프론트엔드 공부 블로그 / Learn in Public`,
   author: `taenyKim`,
-  introduction: `웹 프론트엔드 공부 블로그 / 시간은 너의 편이다. / Learn in Public`,
+  introduction: `웹 프론트엔드 공부 블로그 / Learn in Public`,
   siteUrl: `https://taeny.dev`, // Your blog site url
   social: {
-    twitter: ``, // Your Twitter account
+    twitter: `taenydev`, // Your Twitter account
     github: `taenykim`, // Your GitHub account
     medium: ``, // Your Medium account
     facebook: `teun1215`, // Your Facebook account
