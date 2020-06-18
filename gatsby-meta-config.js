@@ -5,7 +5,7 @@ module.exports = {
   introduction: `웹 프론트엔드 공부 블로그 / Learn in Public`,
   siteUrl: `https://taeny.dev`, // Your blog site url
   social: {
-    twitter: `taenydev`, // Your Twitter account
+    twitter: ``, // Your Twitter account
     github: `taenykim`, // Your GitHub account
     medium: ``, // Your Medium account
     facebook: `teun1215`, // Your Facebook account
