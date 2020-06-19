@@ -1,5 +1,5 @@
 // app
-$theme-gradient: linear-gradient(72deg, #291e95, #cc007a);
+$theme-gradient: linear-gradient(90deg, #7700ff, #ff9900);
 $top-header-text-color: #fff;
 
 /**
@@ -7,7 +7,7 @@ $top-header-text-color: #fff;
  */
 
 // body
-$light-background-color: #fff;
+$light-background-color: #eee;
 $light-text-shadow: 0 0 0.1px rgba(0, 0, 0, 0.3);
 $light-hover-text-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
 
@@ -22,18 +22,17 @@ $light-gray: #aaa;
 $navigator-text-color: #cc007a;
 $navigator-background-color: #fceff7;
 $blockquote-text-color: #999;
-
 // code
 $inline-dimmed-color: #f5effc;
 $inline-text-color: #6204dd;
 
 // category
-$light-category-border-color: #ecf0f2;
+$light-category-border-color: #ccc;
 $light-category-highlight-border-color: #909da1;
-$light-category-background-color: #f4f7f8;
+$light-category-background-color: #eee;
 $light-category-text-color: #666;
 $light-category-highlight-text-color: #636c6e;
-$light-category-item-color: #fff;
+$light-category-item-color: #eee;
 
 /**
  * @dark theme
