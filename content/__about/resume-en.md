@@ -4,11 +4,11 @@ date: 2020-6-18 16:21:13
 lang: 'en'
 ---
 
-### 📃 Resume (작성중)
+### 📃 Portfolio
 
 <br />
 
-# 김태은
+# TaenyKim.
 
 **안녕하세요. 웹과 그래픽, UX 에 관심이 많은 프론트엔드 개발자 김태은입니다.**
 
@@ -23,11 +23,11 @@ lang: 'en'
 
 <br />
 
-# 프로젝트
+# Project.
 
 ## Interactive Pixelator
 
-> **이미지를 이용하여 픽셀아트를 만드는 npm 패키지(라이브러리) 제작 및 배포**
+#### 이미지를 이용하여 픽셀아트를 만드는 npm 패키지(라이브러리) 제작 및 배포
 
 - 20.06.10 ~ 현재
 - Library : TypeScript, Rollup, babel
@@ -41,7 +41,7 @@ lang: 'en'
 
 ## Majoong Grimor
 
-> **네이버 웹툰 썸네일 저작도구 제작(2020 네이버 핵데이)**
+#### 네이버 웹툰 썸네일 저작도구 제작(2020 네이버 핵데이)
 
 - 20.05.06 ~ 20.05.28
 - Common: TypeScript, Gitflow
@@ -55,7 +55,7 @@ lang: 'en'
 
 ## Small Magic Project
 
-> **공부목적의 개인 토이 프로젝트**
+#### 공부목적의 개인 토이 프로젝트
 
 - 20.02.20 ~ 현재
 - Tech : nextJS, React, Redux, etc...
@@ -67,6 +67,23 @@ lang: 'en'
 |  **Web Site**   | <https://small-magic-project.now.sh>                                                                                                     |
 |  **제작노트**   | [https://taeny.dev/project/소마법프로젝트](https://taeny.dev/project/%EC%86%8C%EB%A7%88%EB%B2%95-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B81/) |
 
-# 활동
+# Skills.
 
-# 교육
+#### Front end
+
+- HTML · CSS · SASS · Styled-components
+- JavaScript · TypeScript
+- React · Redux · Redux-saga · NextJS
+- Babel · Webpack · Rollup
+- Canvas
+- Jest
+
+#### Other
+
+- nodeJS · express · AWS(EC2, S3)
+- photoshop · Illustrator · After Effects
+- git · github
+
+# Education.
+
+#### 2014.03-2020.08 아주대학교 미디어학과 (졸업예정)
