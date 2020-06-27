@@ -102,21 +102,21 @@ DOM TREE 생성과 비슷한 방식으로 CSS 스타일시트를 참조해서 **
 
 ### 1. 레이아웃 (Reflow)이 발생하는 CSS 속성 사용 피하기
 
-> Reflow를 발생시키는 CSS 속성(left, top, margin, padding, border, width, height, 등..)보다 transform과 같은 Repaint만 발생시키는 속성 사용하기
+Reflow를 발생시키는 CSS 속성(left, top, margin, padding, border, width, height, 등..)보다 transform과 같은 Repaint만 발생시키는 속성 사용하기
 
-> 또한 `visibilty: invisible`는 레이아웃 공간을 차지하지만 `display: none`은 레이아웃 공간을 차지하지 않아 rendering tree 형성에 제외되기 때문에 성능을 위해 후자를 쓰는 것이 좋다.
+또한 `visibilty: invisible`는 레이아웃 공간을 차지하지만 `display: none`은 레이아웃 공간을 차지하지 않아 rendering tree 형성에 제외되기 때문에 성능을 위해 후자를 쓰는 것이 좋다.
 
 ### 2. 가능한 최하위 요소의 스타일을 변경
 
-> 상단의 엘리먼트 속성 변경은 하위 모든 엘리먼트에도 영향을 주기 때문에 가능한 최하위 엘리먼트의 스타일 변경하기
+상단의 엘리먼트 속성 변경은 하위 모든 엘리먼트에도 영향을 주기 때문에 가능한 최하위 엘리먼트의 스타일 변경하기
 
 ### 3. DOM TREE 깊이 최소화 / 영향 받는 엘리먼트 제한하기
 
-> DOMT TREE의 깊이를 최소화하여 탐색시간을 줄이거나 `position: absolute` 또는 `position: fixed` 를 사용하여 영향 받는 엘리먼트 제한하기
+DOMT TREE의 깊이를 최소화하여 탐색시간을 줄이거나 `position: absolute` 또는 `position: fixed` 를 사용하여 영향 받는 엘리먼트 제한하기
 
 ### 4. 프레임 줄이기 / 애니메이션은 가능한 CSS 이용
 
-> 한 프레임 처리가 `16ms(60fps)` 내로 완료되어야 렌더링 시 끊기는 현상 없이 자연스러운 렌더링을 만들어낼 수 있고, 애니메이션은 JavaScript보다 CSS을 사용하는 것이 좋다.
+한 프레임 처리가 `16ms(60fps)` 내로 완료되어야 렌더링 시 끊기는 현상 없이 자연스러운 렌더링을 만들어낼 수 있고, 애니메이션은 JavaScript보다 CSS을 사용하는 것이 좋다.
 
 # 5. 그래픽과 관련된 분야들
 
