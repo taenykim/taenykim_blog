@@ -23,6 +23,19 @@ from-heading: 1
 to-heading: 1
 ```
 
+# \#. Series
+
+<details>
+<summary>부스트캠프 챌린지 후기 시리즈 한눈에보기[접기/펼치기]</summary>
+<div markdown="1">
+
+- [1. 꾸준히 성장할 수 있는 개발자 [부스트캠프 2020 챌린지 1주차 후기]](https://taeny.dev/essay/boostcamp-challenge-1/)
+
+- [2. 적극적이지만 말랑말랑한 개발자 [부스트캠프 2020 챌린지 2주차 후기]](https://taeny.dev/essay/boostcamp-challenge-2/)
+
+</div>
+</details>
+
 # 1. 개발 = 구현 + 개선
 
 > **개발** : 무언가를 새롭게 만들거나 개선하는 것.
