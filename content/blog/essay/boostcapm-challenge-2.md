@@ -29,7 +29,7 @@ to-heading: 1
 
 - [1. 꾸준히 성장할 수 있는 개발자 [부스트캠프 2020 챌린지 1주차 후기]](https://taeny.dev/essay/boostcamp-challenge-1/)
 
-- [2. 적극적이지만 말랑말랑한 개발자 [부스트캠프 2020 챌린지 2주차 후기]](https://taeny.dev/essay/boostcamp-challenge-2/)
+- [2. 적극적이지만 말랑말랑한 개발자 [부스트캠프 2020 챌린지 2주차 후기]](https://taeny.dev/essay/boostcapm-challenge-2/)
 
 </div>
 </details>
