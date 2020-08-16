@@ -33,6 +33,8 @@ to-heading: 1
 
 - [2. 적극적이지만 말랑말랑한 개발자 [부스트캠프 2020 챌린지 2주차 후기]](https://taeny.dev/essay/boostcapm-challenge-2/)
 
+- [3. 멘탈과 체력이 튼튼한 개발자[부스트캠프 2020 챌린지 3주차 후기]](https://taeny.dev/essay/boostcamp-challenge-3/)
+
 </div>
 </details>
 
