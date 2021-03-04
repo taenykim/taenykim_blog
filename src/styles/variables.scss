@@ -1,5 +1,5 @@
 // app
-$theme-gradient: linear-gradient(90deg, #7700ff, #ff9900);
+$theme-gradient: linear-gradient(90deg, rgb(186, 186, 252), rgb(186, 186, 252));
 $top-header-text-color: #fff;
 
 /**
@@ -7,7 +7,7 @@ $top-header-text-color: #fff;
  */
 
 // body
-$light-background-color: #eee;
+$light-background-color: #ffffff;
 $light-text-shadow: 0 0 0.1px rgba(0, 0, 0, 0.3);
 $light-hover-text-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
 
@@ -21,24 +21,25 @@ $light-gray: #aaa;
 // blog-templates
 $navigator-text-color: #420099;
 $navigator-background-color: #efe5fc;
-$blockquote-text-color: rgb(247, 129, 19);
+$blockquote-text-color: rgb(228, 121, 22);
 // code
-$inline-dimmed-color: #f5effc;
-$inline-text-color: #6204dd;
+$inline-dimmed-color: #ffffff;
+$inline-text-color: #675dfc;
 
 // category
-$light-category-border-color: #ccc;
-$light-category-highlight-border-color: #909da1;
-$light-category-background-color: #eee;
+$light-category-bio-background-color: rgb(234, 234, 255);
+$light-category-border-color: rgb(186, 186, 252);
+$light-category-highlight-border-color: rgb(128, 128, 219);
+$light-category-background-color: #fff;
 $light-category-text-color: #666;
 $light-category-highlight-text-color: #636c6e;
-$light-category-item-color: #eee;
+$light-category-item-color: rgb(234, 234, 255);
 
 /**
  * @dark theme
  */
 $dark-background-color: #282c35;
-$dark-link-color: #bb72ec;
+$dark-link-color: rgb(159, 159, 248);
 
 $dark-lightest-font-color: #fff;
 $dark-light-font-color: #eeeeee;
