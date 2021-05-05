@@ -1,8 +1,8 @@
-# <Taenylog />
+# Blog
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/4c522dc6-ee2f-4471-87d4-d80e176b0a69/deploy-status)](https://app.netlify.com/sites/taeny/deploys)
 
-✏️ 웹 프론트엔드 공부 블로그 | Learn in Public 🌎
+✏️ Learn in Public | 배우며 성장하고 기록하기 #FE #UI #개발 #life 🌎
 
 ## Link
 
@@ -10,6 +10,12 @@
 - 개츠비 스타터 패키지 : <https://github.com/JaeYeopHan/gatsby-starter-bee>
 
 ## Category
+
+#### 2021
+
+- 미정
+
+#### 2020
 
 1. :pencil2: **essay** : 개발에 관한 나의 생각, 느낌의 기록
 2. :closed_book: **javascript** : 자바스크립트 공부 내용 기록 (TIL)
