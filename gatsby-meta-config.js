@@ -1,8 +1,8 @@
 module.exports = {
-  title: `< Taenylog  />`,
-  description: `웹 프론트엔드 공부 블로그 / Learn in Public`,
+  title: `Learn in Public`,
+  description: `배우며 성장하고 기록하기 #FE #UI #개발 #life`,
   author: `taenyKim`,
-  introduction: `웹 프론트엔드 공부 블로그 / Learn in Public`,
+  introduction: `배우며 성장하고 기록하기 #FE #UI #개발 #life`,
   siteUrl: `https://taeny.dev`, // Your blog site url
   social: {
     twitter: ``, // Your Twitter account
