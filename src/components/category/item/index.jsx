@@ -17,7 +17,7 @@ export const Item = ({ title, selectedCategory, onClick, scrollToCenter }) => {
   return (
     <li
       ref={tabRef}
-      className="item"
+      className={title === '2020' ? 'item past' : 'item'}
       role="tab"
       aria-selected={selectedCategory === title ? 'true' : 'false'}
     >

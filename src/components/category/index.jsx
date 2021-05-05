@@ -1,10 +1,17 @@
-import React, { useCallback, useRef } from 'react'
+import React, { useCallback, useRef, useState } from 'react'
 import { rhythm } from '../../utils/typography'
 import './index.scss'
 import { Item } from './item'
 
 export const Category = ({ categories, category, selectCategory }) => {
+  const pastItems = ['essay', 'graphics', 'javascript', 'language', 'project']
+  const [pastCategoryVisibility, setPastCategoryVisibility] = useState(false)
+
   const containerRef = useRef(null)
+
+  const showPastCategory = () => {
+    setPastCategoryVisibility(true)
+  }
 
   const scrollToCenter = useCallback(
     tabRef => {
@@ -41,15 +48,38 @@ export const Category = ({ categories, category, selectCategory }) => {
         onClick={selectCategory}
         scrollToCenter={scrollToCenter}
       />
-      {categories.map((title, idx) => (
+      {categories
+        .filter(item => !pastItems.includes(item))
+        .map((title, idx) => (
+          <Item
+            key={idx}
+            title={title}
+            selectedCategory={category}
+            onClick={selectCategory}
+            scrollToCenter={scrollToCenter}
+          />
+        ))}
+      {!pastCategoryVisibility && (
         <Item
-          key={idx}
-          title={title}
+          title={'2020'}
           selectedCategory={category}
-          onClick={selectCategory}
+          onClick={showPastCategory}
           scrollToCenter={scrollToCenter}
         />
-      ))}
+      )}
+
+      {pastCategoryVisibility &&
+        categories
+          .filter(item => pastItems.includes(item))
+          .map((title, idx) => (
+            <Item
+              key={idx}
+              title={title}
+              selectedCategory={category}
+              onClick={selectCategory}
+              scrollToCenter={scrollToCenter}
+            />
+          ))}
     </ul>
   )
 }
