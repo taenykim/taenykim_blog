@@ -6,7 +6,7 @@
 
 ## Link
 
-- 블로그 링크 : <https://taeny.dev>
+- 블로그 링크 : [<https://taeny.dev>](https://taeny.netlify.app/)
 - 개츠비 스타터 패키지 : <https://github.com/JaeYeopHan/gatsby-starter-bee>
 
 ## Category
